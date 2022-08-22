@@ -22,7 +22,7 @@ tasks.register<Exec>("test") {
     commandLine("turtle", "--validate", originalFilePath)
 }
 
-tasks.register("infer") {
+val infer by tasks.registering {
     doLast{
         try {
             val inferredText: String = ByteArrayOutputStream().use { outputStream ->
@@ -46,4 +46,9 @@ tasks.register("infer") {
             File(inferredFilePath).delete()
         }
     }
+}
+
+val serverUp by tasks.registering(Exec::class) {
+    dependsOn(infer)
+    commandLine("bundle", "exec", "jekyll", "serve")
 }
