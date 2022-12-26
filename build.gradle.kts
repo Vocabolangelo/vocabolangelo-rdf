@@ -21,29 +21,3 @@ val mergedFilePath = filePath(mergedFileName)
 tasks.register<Exec>("test") {
     commandLine("turtle", "--validate", originalFilePath)
 }
-
-tasks.register("infer") {
-    doLast{
-        try {
-            val inferredText: String = ByteArrayOutputStream().use { outputStream ->
-                exec{
-                    commandLine("pellet", "extract", originalFilePath)
-                    standardOutput = outputStream
-                }
-                outputStream.toString()
-            }
-            File(inferredFilePath).writeText(inferredText)
-
-            val mergedText: String = ByteArrayOutputStream().use { outputStream ->
-                exec{
-                    commandLine("riot", "--output=TURTLE", originalFilePath, inferredFilePath)
-                    standardOutput = outputStream
-                }
-                outputStream.toString()
-            }
-            File(mergedFilePath).writeText(mergedText)
-        } finally {
-            File(inferredFilePath).delete()
-        }
-    }
-}
