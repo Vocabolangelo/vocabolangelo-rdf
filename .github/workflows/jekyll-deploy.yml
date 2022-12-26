@@ -20,7 +20,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - run: |
-          ./.github/scripts/pellet-infer.sh
+          ./pellet-infer.sh
       - uses:  helaili/jekyll-action@v2
         with:
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
