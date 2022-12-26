@@ -3,6 +3,8 @@
 git clone https://github.com/stardog-union/pellet.git build
 curl https://dlcdn.apache.org/jena/binaries/apache-jena-4.6.1.zip --output build/jena.zip
 unzip -n -q -d build/jena build/jena.zip
+ls
+ls build
 cd ./build/pellet
 mvn install -pl cli -DskipTests
 chmod u+x ./cli/target/pelletcli/bin/pellet

@@ -9,14 +9,10 @@ import java.io.ByteArrayOutputStream
 
 val dataFolder = "_data"
 val originalFileName = "vocabolangelo.ttl"
-val inferredFileName = "vocabolangelo-inferred.xml"
-val mergedFileName = "vocabolangelo-merged.ttl"
 
 fun filePath(fileName: String) = dataFolder + File.separator + fileName
 
 val originalFilePath = filePath(originalFileName)
-val inferredFilePath = filePath(inferredFileName)
-val mergedFilePath = filePath(mergedFileName)
 
 tasks.register<Exec>("test") {
     commandLine("turtle", "--validate", originalFilePath)
