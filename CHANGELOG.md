@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.3.0](https://github.com/Vocabolangelo/vocabolangelo-rdf/compare/v3.2.0...v3.3.0) (2023-01-12)
+
+
+### Features
+
+* **concept:** add anticorpolo ([8a9ecdb](https://github.com/Vocabolangelo/vocabolangelo-rdf/commit/8a9ecdb3d9b425a41e3bf89eb4630ef4164fee27))
+* **concept:** add tabbella ([518cb6c](https://github.com/Vocabolangelo/vocabolangelo-rdf/commit/518cb6cc28a5548232b3fcb137afeead8840eeec))
+* **concept:** add zabuccino ([8712fe5](https://github.com/Vocabolangelo/vocabolangelo-rdf/commit/8712fe5fdca8be00e97cea9502f8845d1dcba92a))
+
 ## [3.2.0](https://github.com/Vocabolangelo/vocabolangelo-rdf/compare/v3.1.0...v3.2.0) (2023-01-09)
 
 
